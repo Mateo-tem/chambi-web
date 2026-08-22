@@ -1,0 +1,21 @@
+---
+interface Props {
+  variant?: 'dark' | 'light';
+  size?: 'sm' | 'md' | 'lg';
+  className?: string;
+}
+
+const { variant = 'dark', size = 'md', className = '' } = Astro.props as Props;
+
+const sizeMap = {
+  sm: 'h-9',
+  md: 'h-11',
+  lg: 'h-14',
+};
+
+const logoMap = {
+  dark: '/Chambi_Logo_Negro.svg',
+  light: '/Chambi_Logo_Blanco.svg',
+};
+---
+<img src={logoMap[variant]} alt="Chambi logo" class:list={[sizeMap[size], className, 'object-contain']} />

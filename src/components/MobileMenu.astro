@@ -1,0 +1,24 @@
+---
+const links = [
+  { label: 'Inicio', href: '/#inicio' },
+  { label: '¿Cómo funciona?', href: '/#como-funciona' },
+  { label: 'Para clientes', href: '/#clientes' },
+  { label: 'Para trabajadores', href: '/#trabajadores' },
+  { label: 'FAQ', href: '/#faq' },
+  { label: 'Descargar Chambi', href: '/#descarga' },
+];
+---
+<div id="mobile-menu" class="pointer-events-none fixed inset-x-4 top-20 z-40 max-h-[calc(100vh-6.5rem)] translate-y-4 overflow-y-auto opacity-0 transition-all duration-300 md:hidden" aria-hidden="true">
+  <div class="rounded-3xl border border-slate-700 bg-slate-900/95 p-4 shadow-soft backdrop-blur-md">
+    <nav class="flex flex-col gap-2">
+      {links.map((link) => (
+        <a
+          href={link.href}
+          class="mobile-link rounded-2xl px-3 py-3 text-base font-medium text-white transition hover:bg-slate-800"
+        >
+          {link.label}
+        </a>
+      ))}
+    </nav>
+  </div>
+</div>

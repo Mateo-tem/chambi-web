@@ -1,0 +1,49 @@
+---
+import ChambiLogo from './ChambiLogo.astro';
+import Button from './Button.astro';
+import MobileMenu from './MobileMenu.astro';
+
+const links = [
+  { label: 'Inicio', href: '/#inicio' },
+  { label: '¿Cómo funciona?', href: '/#como-funciona' },
+  { label: 'Para clientes', href: '/#clientes' },
+  { label: 'Para trabajadores', href: '/#trabajadores' },
+  { label: 'FAQ', href: '/#faq' },
+];
+---
+<nav class="sticky top-0 z-50 border-b border-slate-700/80 bg-slate-950">
+  <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+    <a href="/#inicio" class="flex items-center gap-3" aria-label="Ir al inicio">
+      <ChambiLogo variant="light" size="sm" />
+    </a>
+
+    <div class="hidden items-center gap-8 md:flex">
+      {links.map((link) => (
+        <a href={link.href} class="text-sm font-medium text-slate-300 transition hover:text-white">
+          {link.label}
+        </a>
+      ))}
+    </div>
+
+    <div class="hidden md:block">
+      <Button href="/#descarga" variant="primary">Descargar Chambi</Button>
+    </div>
+
+    <button
+      type="button"
+      data-nav-toggle
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+      class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-600 text-white transition hover:border-slate-500 md:hidden"
+      aria-label="Abrir menú"
+    >
+      <span class="flex flex-col gap-1.5">
+        <span class="block h-0.5 w-5 bg-current transition"></span>
+        <span class="block h-0.5 w-5 bg-current transition"></span>
+        <span class="block h-0.5 w-5 bg-current transition"></span>
+      </span>
+    </button>
+  </div>
+
+  <MobileMenu />
+</nav>

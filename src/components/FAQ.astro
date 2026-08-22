@@ -1,0 +1,55 @@
+---
+import SectionHeading from './SectionHeading.astro';
+
+const faqs = [
+  {
+    question: '¿Quién puede utilizar Chambi?',
+    answer:
+      'Puede utilizarlo cualquier persona que necesite servicios o que ofrezca trabajos independientes en su zona.',
+  },
+  {
+    question: '¿Cómo encuentro un trabajador?',
+    answer:
+      'Publicas tu necesidad, recibes propuestas y eliges la opción que mejor te convenga.',
+  },
+  {
+    question: '¿Cómo reciben propuestas los trabajadores?',
+    answer:
+      'Los trabajadores cercanos pueden ver los trabajos y enviar sus propuestas directamente.',
+  },
+  {
+    question: '¿Chambi cobra comisión?',
+    answer:
+      'Actualmente Chambi no cobra comisión ni procesa pagos dentro de la aplicación.',
+  },
+  {
+    question: '¿Chambi está disponible en Google Play?',
+    answer:
+      'Actualmente no. La aplicación se distribuye mediante descarga directa para Android desde la web oficial.',
+  },
+];
+---
+<section class="py-20">
+  <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+    <SectionHeading
+      eyebrow="FAQ"
+      title="Preguntas frecuentes"
+      description="Todo lo que necesitas saber sobre Chambi, en respuestas breves y claras."
+      align="center"
+    />
+
+    <div class="mt-12 space-y-4">
+      {faqs.map((faq) => (
+        <details class="group rounded-2xl border border-slate-700 bg-slate-900/70 p-4 shadow-sm open:shadow-soft">
+          <summary class="cursor-pointer list-none text-left text-base font-semibold text-white md:text-lg">
+            <span class="flex items-center justify-between gap-4">
+              <span>{faq.question}</span>
+              <span class="text-xl text-accent transition group-open:rotate-45">+</span>
+            </span>
+          </summary>
+          <p class="mt-4 max-w-3xl text-sm leading-6 text-slate-300 md:text-base">{faq.answer}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

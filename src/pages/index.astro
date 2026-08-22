@@ -1,0 +1,246 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Button from '../components/Button.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import FAQ from '../components/FAQ.astro';
+import { downloadConfig } from '../config/download';
+
+const features = [
+  {
+    title: 'Cerca',
+    description: 'Encuentra oportunidades y trabajadores en tu zona con rapidez y claridad.',
+  },
+  {
+    title: 'Conecta',
+    description: 'Recibe o envía propuestas para trabajos y define quién es el indicado.',
+  },
+  {
+    title: 'Reputación',
+    description: 'Construye confianza con trabajos completados y reseñas reales.',
+  },
+];
+
+const steps = [
+  {
+    number: '01',
+    title: 'Publica',
+    description: 'Describe qué necesitas y establece un presupuesto.',
+  },
+  {
+    number: '02',
+    title: 'Recibe propuestas',
+    description: 'Trabajadores cercanos pueden enviar sus propuestas.',
+  },
+  {
+    number: '03',
+    title: 'Elige',
+    description: 'Compara propuestas y selecciona al trabajador.',
+  },
+  {
+    number: '04',
+    title: 'Coordina',
+    description: 'Contacta por WhatsApp y coordina el trabajo.',
+  },
+];
+
+---
+<BaseLayout>
+  <section id="inicio" class="relative overflow-hidden bg-midnight">
+    <picture class="hero-visual absolute inset-0 z-0 hidden opacity-0 sm:block">
+      <source media="(min-width: 640px)" srcset="/media/Chambi_mockup_hero.png" />
+      <img
+        src="/media/Chambi_mockup_hero_mobile.png"
+        alt="Vista principal de Chambi"
+        class="h-full w-full object-cover"
+        loading="eager"
+        decoding="async"
+      />
+    </picture>
+    <div class="absolute inset-0 z-[1] hidden bg-gradient-to-r from-midnight/95 via-midnight/80 to-midnight/60 sm:block"></div>
+
+    <div class="relative z-10 mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-40">
+      <img
+        src="/media/Chambi_mockup_hero_mobile.png"
+        alt="Vista móvil de Chambi en la sección principal"
+        class="hero-copy mb-6 w-full object-contain opacity-0 sm:hidden"
+        loading="eager"
+        decoding="async"
+      />
+
+      <div class="max-w-3xl">
+        <h1 class="hero-copy mt-4 text-3xl tracking-[-0.04em] text-white opacity-0 sm:mt-6 sm:text-5xl md:text-7xl">
+          Tu trabajo,<br />
+          <span class="font-black text-accent">más cerca de ti.</span>
+        </h1>
+        <p class="hero-copy mt-5 max-w-xl text-base leading-7 text-slate-300 opacity-0 sm:mt-6 sm:text-lg">
+          Conecta con personas de Lima que necesitan tus servicios o encuentra trabajadores cerca de ti.
+        </p>
+
+        <div class="hero-copy mt-7 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:gap-4 opacity-0">
+          <Button href="#descarga" variant="primary" className="w-full sm:w-auto">Descargar Chambi</Button>
+          <Button href="#como-funciona" variant="secondary" className="w-full sm:w-auto">¿Cómo funciona?</Button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-slate-950 py-16 sm:py-20">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div class="reveal max-w-3xl">
+        <h2 class="text-2xl font-black tracking-tight text-white sm:text-3xl md:text-4xl">
+          Muchos trabajan por recomendación y muchas personas necesitan ayuda rápida.
+        </h2>
+        <p class="mt-4 text-base leading-7 text-slate-300 sm:mt-5 sm:text-lg">
+          Chambi busca conectar a quienes necesitan un servicio con trabajadores disponibles y cercanos.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-midnight py-16 sm:py-20">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div class="reveal">
+        <SectionHeading
+          eyebrow="¿Qué es Chambi?"
+          title="Una forma más sencilla de encontrar trabajo y servicios cerca de ti."
+        />
+      </div>
+
+      <div class="mt-10 grid gap-8 md:mt-12 md:grid-cols-3">
+        {features.map((feature) => (
+          <div class="reveal max-w-md">
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-accent">{feature.title}</p>
+            <p class="mt-3 text-base leading-7 text-slate-300">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="como-funciona" class="bg-slate-950 py-16 sm:py-20">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div class="reveal">
+        <SectionHeading
+          eyebrow="¿Cómo funciona?"
+          title="Cuatro pasos para conectar oportunidades y servicios."
+        />
+      </div>
+
+      <div class="mt-10 space-y-4 sm:mt-12 sm:space-y-6">
+        {steps.map((step) => (
+          <div class="reveal flex gap-4 border-t border-slate-800 py-5 sm:gap-5">
+            <span class="text-sm font-black tracking-[0.25em] text-accent">{step.number}</span>
+            <div>
+              <h3 class="text-lg font-bold text-white sm:text-xl">{step.title}</h3>
+              <p class="mt-2 max-w-2xl text-base leading-7 text-slate-300">{step.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="clientes" class="bg-midnight py-16 sm:py-20">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div class="grid items-center gap-10 sm:gap-12 lg:grid-cols-2">
+        <div>
+          <div class="reveal">
+            <SectionHeading
+              eyebrow="Para clientes"
+              title="¿Necesitas una mano?"
+              description="Encuentra trabajadores independientes cerca de ti y recibe propuestas para lo que necesitas."
+            />
+          </div>
+
+          <p class="mt-6 max-w-xl text-base leading-8 text-slate-300 sm:mt-8">
+            Crear trabajo, elegir oficio, definir presupuesto, recibir propuestas, elegir trabajador y contactar por WhatsApp.
+          </p>
+
+          <div class="mt-7 sm:mt-8">
+            <Button href="#descarga" variant="primary" className="w-full sm:w-auto">Encontrar un trabajador</Button>
+          </div>
+        </div>
+
+        <div class="hidden justify-center sm:flex">
+          <img
+            src="/media/Chambi_mockup_cliente.png"
+            alt="Mockup de Chambi para clientes"
+            class="w-full max-w-[340px] object-contain"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="trabajadores" class="bg-slate-950 py-16 sm:py-20">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div class="grid items-center gap-10 sm:gap-12 lg:grid-cols-2">
+        <div class="hidden justify-center sm:flex">
+          <img
+            src="/media/Chambi_mockup_trabajador.png"
+            alt="Mockup de Chambi para trabajadores"
+            class="w-full max-w-[340px] object-contain"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+
+        <div>
+          <div class="reveal">
+            <SectionHeading
+              eyebrow="Para trabajadores"
+              title="Encuentra tu próxima chamba."
+              description="Descubre trabajos cerca de ti y conecta con personas que necesitan tus servicios."
+            />
+          </div>
+
+          <p class="mt-6 max-w-xl text-base leading-8 text-slate-300 sm:mt-8">
+            Trabajos cercanos, distancia, oficio, presupuesto, propuesta y reputación forman parte del flujo para que cada trabajador encuentre su siguiente chamba.
+          </p>
+
+          <div class="mt-7 sm:mt-8">
+            <Button href="#descarga" variant="primary" className="w-full sm:w-auto">Descargar Chambi</Button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="descarga" class="bg-midnight py-16 sm:py-20">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <div class="reveal rounded-3xl border border-slate-700 bg-slate-900/70 p-6 text-center sm:p-8">
+        <h2 class="text-2xl font-black tracking-tight text-white sm:text-3xl md:text-4xl">
+          Descarga Chambi
+        </h2>
+        <p class="mx-auto mt-4 max-w-2xl text-base leading-7 text-slate-300 md:text-lg">
+          Tu próxima chamba puede estar más cerca de lo que crees.
+        </p>
+
+        {downloadConfig.isAvailable && downloadConfig.apkUrl ? (
+          <>
+            <p class="mt-4 text-base text-slate-400">{downloadConfig.directAndroidText}</p>
+            <div class="mt-7">
+              <Button href={downloadConfig.apkUrl} variant="primary" className="w-full sm:w-auto">Descargar Chambi</Button>
+            </div>
+          </>
+        ) : (
+          <>
+            <p class="mt-4 text-base text-slate-400">{downloadConfig.directAndroidText}</p>
+            <div class="mt-7">
+              <span class="inline-flex rounded-full bg-slate-200 px-5 py-3 text-sm font-semibold text-slate-700">
+                {downloadConfig.fallbackLabel}
+              </span>
+            </div>
+          </>
+        )}
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="bg-slate-950 py-16 sm:py-20">
+    <FAQ />
+  </section>
+</BaseLayout>
