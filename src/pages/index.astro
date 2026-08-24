@@ -7,15 +7,15 @@ import { downloadConfig } from '../config/download';
 
 const features = [
   {
-    title: 'Cerca',
+    title: 'Encuéntralo a un paso',
     description: 'Encuentra oportunidades y trabajadores en tu zona con rapidez y claridad.',
   },
   {
-    title: 'Conecta',
+    title: 'Personaliza',
     description: 'Recibe o envía propuestas para trabajos y define quién es el indicado.',
   },
   {
-    title: 'Reputación',
+    title: 'Gana reputación',
     description: 'Construye confianza con trabajos completados y reseñas reales.',
   },
 ];
@@ -33,8 +33,8 @@ const steps = [
   },
   {
     number: '03',
-    title: 'Elige',
-    description: 'Compara propuestas y selecciona al trabajador.',
+    title: 'Elige al trabajador',
+    description: 'Compara propuestas según tu disponiblidad, filtra reseñas y selecciona al trabajador.',
   },
   {
     number: '04',
@@ -73,7 +73,7 @@ const steps = [
           <span class="font-black text-accent">más cerca de ti.</span>
         </h1>
         <p class="hero-copy mt-5 max-w-xl text-base leading-7 text-slate-300 opacity-0 sm:mt-6 sm:text-lg">
-          Conecta con personas de Lima que necesitan tus servicios o encuentra trabajadores cerca de ti.
+          Conecta con personas alrededor de Lima que necesitan tus servicios o encuentra trabajadores cerca de ti.
         </p>
 
         <div class="hero-copy mt-7 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:gap-4 opacity-0">
@@ -87,13 +87,26 @@ const steps = [
 
   <section class="bg-slate-950 py-16 sm:py-20">
     <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-      <div class="reveal max-w-3xl">
-        <h2 class="text-2xl font-black tracking-tight text-white sm:text-3xl md:text-4xl">
-          Muchos trabajan por recomendación y muchas personas necesitan ayuda rápida.
-        </h2>
-        <p class="mt-4 text-base leading-7 text-slate-300 sm:mt-5 sm:text-lg">
-          Chambi busca conectar a quienes necesitan un servicio con trabajadores disponibles y cercanos.
-        </p>
+      <div class="reveal flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+        <div class="max-w-3xl lg:w-1/2">
+          <h2 class="text-2xl font-black tracking-tight text-white sm:text-3xl md:text-4xl">
+            Muchos trabajan por <span class="text-accent">recomendación</span> y muchas personas necesitan <span class="text-accent">ayuda rápida</span>.
+          </h2>
+          <p class="mt-4 text-base leading-7 text-slate-300 sm:mt-5 sm:text-lg">
+            En Chambi, conectamos a quienes necesitan un servicio con trabajadores disponibles y cercanos.
+          </p>
+        </div>
+
+        <div class="lg:w-1/2">
+          <video
+            class="w-full rounded-3xl border border-slate-700 bg-slate-900 object-cover shadow-xl shadow-black/20"
+            src="/media/Chambi_Promo_Web.mp4"
+            autoplay
+            muted
+            loop
+            playsinline
+          />
+        </div>
       </div>
     </div>
   </section>
@@ -102,8 +115,7 @@ const steps = [
     <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
       <div class="reveal">
         <SectionHeading
-          eyebrow="¿Qué es Chambi?"
-          title="Una forma más sencilla de encontrar trabajo y servicios cerca de ti."
+          title="Chambi es una forma más sencilla de encontrar servicios cerca de ti."
         />
       </div>
 
@@ -149,14 +161,14 @@ const steps = [
             <SectionHeading
               eyebrow="Para clientes"
               title="¿Necesitas una mano?"
-              description="Encuentra trabajadores independientes cerca de ti y recibe propuestas para lo que necesitas."
+              description="Sabemos que nadie empieza teniendo contactos de trabajadores cuando más los necesitas cerca..."
             />
           </div>
 
-          <p class="mt-6 max-w-xl text-base leading-8 text-slate-300 sm:mt-8">
-            Crear trabajo, elegir oficio, definir presupuesto, recibir propuestas, elegir trabajador y contactar por WhatsApp.
+          <p class="mt-4 max-w-xl text-base leading-8 text-slate-300">
+            Encuentralos cerca de ti y recibe propuestas para lo que necesitas.
           </p>
-
+          
           <div class="mt-7 sm:mt-8">
             <Button href="#descarga" variant="primary" className="w-full sm:w-auto">Encontrar un trabajador</Button>
           </div>
@@ -193,13 +205,9 @@ const steps = [
             <SectionHeading
               eyebrow="Para trabajadores"
               title="Encuentra tu próxima chamba."
-              description="Descubre trabajos cerca de ti y conecta con personas que necesitan tus servicios."
+              description="¿No te quieres ir tan lejos? Tranquilo, descubre trabajos cerca de ti y conecta con personas que necesitan tus servicios. ¡Expande tu red!"
             />
           </div>
-
-          <p class="mt-6 max-w-xl text-base leading-8 text-slate-300 sm:mt-8">
-            Trabajos cercanos, distancia, oficio, presupuesto, propuesta y reputación forman parte del flujo para que cada trabajador encuentre su siguiente chamba.
-          </p>
 
           <div class="mt-7 sm:mt-8">
             <Button href="#descarga" variant="primary" className="w-full sm:w-auto">Descargar Chambi</Button>

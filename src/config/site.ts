@@ -2,7 +2,7 @@ export const siteConfig = {
   appName: 'Chambi',
   slogan: 'Tu trabajo, más cerca de ti.',
   description:
-    'Chambi conecta personas con trabajadores independientes cerca de ellas.',
+    'Chambi conecta personas alrededor de Lima con trabajadores independientes cerca de ellas.',
   supportEmail: 'm.medinatech@gmail.com',
   location: 'Lima, Perú',
   colors: {
@@ -14,7 +14,7 @@ export const siteConfig = {
   meta: {
     title: 'Chambi',
     description:
-      'Chambi conecta personas con trabajadores independientes cerca de ellas.',
+      'Chambi conecta personas alrededor de Lima con trabajadores independientes cerca de ellas.',
     url: 'https://chambi.pe',
   },
 };
