@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Button from '../components/Button.astro';
+---
+<BaseLayout title="Página no encontrada | Chambi" description="La página que buscas no existe o ya no está disponible.">
+  <section class="flex min-h-[calc(100vh-5rem)] items-center bg-midnight px-4 py-20 sm:px-6 lg:px-8">
+    <div class="mx-auto w-full max-w-5xl">
+      <div class="max-w-2xl">
+        <h1 class="mt-5 text-5xl font-black tracking-tight text-white sm:text-7xl">404</h1>
+        <p class="mt-6 max-w-xl text-base leading-8 text-slate-300 sm:text-lg">
+          Uy, ¿te perdiste? La página que buscas no está disponible. Regresa al inicio y encuentra lo que necesitas cerca de ti.
+        </p>
+        <div class="mt-8">
+          <Button href="/" variant="primary">Volver al inicio</Button>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

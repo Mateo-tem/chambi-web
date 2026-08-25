@@ -45,8 +45,24 @@ const steps = [
 
 ---
 <BaseLayout>
+<section class="overflow-hidden bg-accent py-4 text-midnight sm:py-5" aria-label="Estamos muy cerca del lanzamiento oficial">
+    <div class="marquee-track flex w-max items-center" aria-hidden="true">
+      <div class="marquee-group flex min-w-[100vw] shrink-0 items-center justify-around gap-8 px-4 sm:gap-12 sm:px-6">
+        <span class="text-sm font-black uppercase tracking-[0.16em] sm:text-base">Estamos muy cerca del lanzamiento oficial</span>
+        <span class="text-xl leading-none" aria-hidden="true">✦</span>
+        <span class="text-sm font-black uppercase tracking-[0.16em] sm:text-base">Estamos muy cerca del lanzamiento oficial</span>
+        <span class="text-xl leading-none" aria-hidden="true">✦</span>
+      </div>
+      <div class="marquee-group flex min-w-[100vw] shrink-0 items-center justify-around gap-8 px-4 sm:gap-12 sm:px-6">
+        <span class="text-sm font-black uppercase tracking-[0.16em] sm:text-base">Estamos muy cerca del lanzamiento oficial</span>
+        <span class="text-xl leading-none" aria-hidden="true">✦</span>
+        <span class="text-sm font-black uppercase tracking-[0.16em] sm:text-base">Estamos muy cerca del lanzamiento oficial</span>
+        <span class="text-xl leading-none" aria-hidden="true">✦</span>
+      </div>
+    </div>
+  </section>
   <section id="inicio" class="relative overflow-hidden bg-midnight">
-    <picture class="hero-visual absolute inset-0 z-0 hidden opacity-0 sm:block">
+    <picture class="hero-visual absolute inset-0 z-0 hidden sm:block">
       <source media="(min-width: 640px)" srcset="/media/Chambi_mockup_hero.png" />
       <img
         src="/media/Chambi_mockup_hero_mobile.png"
@@ -62,21 +78,21 @@ const steps = [
       <img
         src="/media/Chambi_mockup_hero_mobile.png"
         alt="Vista móvil de Chambi en la sección principal"
-        class="hero-copy mb-6 w-full object-contain opacity-0 sm:hidden"
+        class="hero-copy mb-6 w-full object-contain sm:hidden"
         loading="eager"
         decoding="async"
       />
 
       <div class="max-w-3xl">
-        <h1 class="hero-copy mt-4 text-3xl tracking-[-0.04em] text-white opacity-0 sm:mt-6 sm:text-5xl md:text-7xl">
+        <h1 class="hero-copy mt-4 text-3xl tracking-[-0.04em] text-white sm:mt-6 sm:text-5xl md:text-7xl">
           Tu trabajo,<br />
           <span class="font-black text-accent">más cerca de ti.</span>
         </h1>
-        <p class="hero-copy mt-5 max-w-xl text-base leading-7 text-slate-300 opacity-0 sm:mt-6 sm:text-lg">
+        <p class="hero-copy mt-5 max-w-xl text-base leading-7 text-slate-300 sm:mt-6 sm:text-lg">
           Conecta con personas alrededor de Lima que necesitan tus servicios o encuentra trabajadores cerca de ti.
         </p>
 
-        <div class="hero-copy mt-7 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:gap-4 opacity-0">
+        <div class="hero-copy mt-7 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:gap-4">
           <Button href="#descarga" variant="primary" className="w-full sm:w-auto">Descargar Chambi</Button>
           <Button href="#como-funciona" variant="secondary" className="w-full sm:w-auto">¿Cómo funciona?</Button>
         </div>
