@@ -29,7 +29,7 @@ const {
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
     <title>{title}</title>
   </head>
-  <body class="bg-white text-midnight">
+  <body class="bg-midnight text-midnight">
     <Navbar />
     <main>
       <slot />
@@ -37,6 +37,8 @@ const {
     <Footer />
 
     <script>
+      import { inject } from '@vercel/analytics';
+      inject();
       import { gsap } from 'gsap';
       import { ScrollTrigger } from 'gsap/ScrollTrigger';
 

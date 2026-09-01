@@ -3,7 +3,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Button from '../components/Button.astro';
 import SectionHeading from '../components/SectionHeading.astro';
 import FAQ from '../components/FAQ.astro';
-import { downloadConfig } from '../config/download';
+import { downloadConfig, fetchVersionData } from '../config/download';
+
+const versionData = await fetchVersionData();
 
 const features = [
   {
@@ -77,7 +79,7 @@ const steps = [
         </p>
 
         <div class="hero-copy mt-7 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:gap-4">
-          <Button href="#descarga" variant="primary" className="w-full sm:w-auto">Descargar Chambi</Button>
+          <Button href={versionData.downloadUrl} variant="primary" className="w-full sm:w-auto">Descargar Chambi v{versionData.version}</Button>
           <Button href="#como-funciona" variant="secondary" className="w-full sm:w-auto">¿Cómo funciona?</Button>
         </div>
 
@@ -227,23 +229,15 @@ const steps = [
           Tu próxima chamba puede estar más cerca de lo que crees.
         </p>
 
-        {downloadConfig.isAvailable && downloadConfig.apkUrl ? (
-          <>
-            <p class="mt-4 text-base text-slate-400">{downloadConfig.directAndroidText}</p>
-            <div class="mt-7">
-              <Button href={downloadConfig.apkUrl} variant="primary" className="w-full sm:w-auto">Descargar Chambi v{downloadConfig.apkVersion}</Button>
-            </div>
-          </>
-        ) : (
-          <>
-            <p class="mt-4 text-base text-slate-400">{downloadConfig.directAndroidText}</p>
-            <div class="mt-7">
-              <span class="inline-flex rounded-full bg-slate-200 px-5 py-3 text-sm font-semibold text-slate-700">
-                {downloadConfig.fallbackLabel}
-              </span>
-            </div>
-          </>
-        )}
+        <>
+          <p class="mt-4 text-base text-slate-400">{downloadConfig.directAndroidText}</p>
+          <div class="mt-7 flex flex-col gap-4">
+            <Button href={versionData.downloadUrl} variant="primary" className="w-full sm:w-auto">Descargar Chambi v{versionData.version}</Button>
+          </div>
+          <p class="mt-6 text-sm text-slate-400">
+            ¿Primera vez? <a href="/como-instalar" class="text-accent font-semibold hover:underline">Lee la guía de instalación</a>
+          </p>
+        </>
       </div>
     </div>
   </section>
