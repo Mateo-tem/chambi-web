@@ -3,6 +3,7 @@ import '../styles/global.css';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import { siteConfig } from '../config/site';
+import SpeedInsights from '@vercel/speed-insights/astro';
 
 interface Props {
   title?: string;
@@ -28,6 +29,7 @@ const {
     <meta name="twitter:description" content={description} />
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
     <title>{title}</title>
+    <SpeedInsights />
   </head>
   <body class="bg-midnight text-midnight">
     <Navbar />
