@@ -45,22 +45,6 @@ const steps = [
 
 ---
 <BaseLayout>
-<section class="overflow-hidden bg-accent py-4 text-midnight sm:py-5" aria-label="Estamos muy cerca del lanzamiento oficial">
-    <div class="marquee-track flex w-max items-center" aria-hidden="true">
-      <div class="marquee-group flex min-w-[100vw] shrink-0 items-center justify-around gap-8 px-4 sm:gap-12 sm:px-6">
-        <span class="text-sm font-black uppercase tracking-[0.16em] sm:text-base">Estamos muy cerca del lanzamiento oficial</span>
-        <span class="text-xl leading-none" aria-hidden="true">✦</span>
-        <span class="text-sm font-black uppercase tracking-[0.16em] sm:text-base">Estamos muy cerca del lanzamiento oficial</span>
-        <span class="text-xl leading-none" aria-hidden="true">✦</span>
-      </div>
-      <div class="marquee-group flex min-w-[100vw] shrink-0 items-center justify-around gap-8 px-4 sm:gap-12 sm:px-6">
-        <span class="text-sm font-black uppercase tracking-[0.16em] sm:text-base">Estamos muy cerca del lanzamiento oficial</span>
-        <span class="text-xl leading-none" aria-hidden="true">✦</span>
-        <span class="text-sm font-black uppercase tracking-[0.16em] sm:text-base">Estamos muy cerca del lanzamiento oficial</span>
-        <span class="text-xl leading-none" aria-hidden="true">✦</span>
-      </div>
-    </div>
-  </section>
   <section id="inicio" class="relative overflow-hidden bg-midnight">
     <picture class="hero-visual absolute inset-0 z-0 hidden sm:block">
       <source media="(min-width: 640px)" srcset="/media/Chambi_mockup_hero.png" />
@@ -247,7 +231,7 @@ const steps = [
           <>
             <p class="mt-4 text-base text-slate-400">{downloadConfig.directAndroidText}</p>
             <div class="mt-7">
-              <Button href={downloadConfig.apkUrl} variant="primary" className="w-full sm:w-auto">Descargar Chambi</Button>
+              <Button href={downloadConfig.apkUrl} variant="primary" className="w-full sm:w-auto">Descargar Chambi v{downloadConfig.apkVersion}</Button>
             </div>
           </>
         ) : (
